@@ -374,7 +374,7 @@ form button[type="submit"]:hover {
     width: 100%;
     height: auto;
     display: block;
-    cursor: url("pin_cursor.svg") 12 12, auto;
+    cursor: url("../assets/pin_cursor.svg") 12 12, auto;
 }
 
 .content-panel svg .map-state {
