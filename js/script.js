@@ -1,4 +1,16 @@
-let myTrips = JSON.parse(localStorage.getItem('mapKeepMyTrips'));
+let myTrips = JSON.parse(localStorage.getItem('mapKeepMyTrips')) || [
+
+
+    { id: 't1', title: 'Praia do Francês', date: '2024-07-10', state: 'Alagoas', description: 'Dia de sol e mar!', photos: ['https://placehold.co/70x70?text=Praia1'] },
+
+
+    { id: 't2', title: 'Centro de Palmas', date: '2023-11-05', state: 'Tocantins', description: 'Conhecendo a capital.', photos: ['https://placehold.co/70x70?text=Palmas1', 'https://placehold.co/70x70?text=Palmas2'] },
+
+
+    { id: 't3', title: 'Pelourinho Visita', date: '2024-01-20', state: 'Bahia', description: 'Cultura e história.', photos: [] }
+
+
+];
 
 let nextTripId;
 
@@ -207,7 +219,7 @@ function initMapPage() {
 
             mapModalBodyEl.querySelectorAll('.trip-card').forEach(card => {
                 card.onclick = () => {
-                    alert(`(Simulação) Detalhes para viagem ID ${card.dataset.id}. Funcionalidade na página 'Minhas Viagens'.`);
+                    card.onclick = () => showTripDetailModalOnTimeline(card.dataset.id);
                 };
             });
         }
